@@ -1,0 +1,20 @@
+objExcel.Columns(2).ColumnWidth = 60  
+objWorksheetO.Cells(oRow,2).Value = (text field) 
+set objRange = objExcel.Range("B1").EntireColumn 
+objRange.Wraptext = true 
+Include Common Code 
+‘ The common VBScript statements (example) 
+' Globals.txt - Global VBScript statements that are used by all of the ' scripts. 
+Const pathname = "C:\My Documents\DataFile\"
+
+
+
+' This code will include a common set of VBScript statements.
+Const ForReading = 1  
+Dim fso: set fso = CreateObject("Scripting.FileSystemObject") Dim f : set f = fso.OpenTextFile("globals.txt",ForReading) Dim s: s = f.ReadAll() 
+ExecuteGlobal s 
+Dim filename : filename = pathname & "myfile.xls" 
+‘ Prove this is working 
+wscript.echo "The file name is " & filename
+
+
