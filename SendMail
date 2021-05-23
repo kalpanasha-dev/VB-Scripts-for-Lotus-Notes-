@@ -1,0 +1,10 @@
+' Sendmail.vbs 
+Option Explicit 
+Dim nSession, db, doc 
+Set nSession = CreateObject("Notes.NotesSession") 'Gets the current user's maildatabase 
+Set db = nSession.GETDATABASE("","") 
+Call db.OPENMAIL 
+Set doc = db.CREATEDOCUMENT 
+Call doc.REPLACEITEMVALUE("SendTo", "dgrund@nospam.com") Call doc.REPLACEITEMVALUE("Subject", "Mail sent from VBscript  SendNotesmail Using Lotus Notes") 
+Call doc.REPLACEITEMVALUE("Body", "Does it work?") Call doc.SEND(False) 
+MsgBox ("The command completed.")
