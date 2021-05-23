@@ -1,0 +1,8 @@
+For example, the following VBA code: 
+Selection.Fields.Add Range:=Selection.Range, Type:=wdFieldPage 
+Selection.Fields.Add Range:=Selection.Range, Type:=wdFieldNumPages 
+Is converted to the following VBScript code: 
+With objWord 
+ .Selection.Fields.Add .Selection.Range,wdFieldPage 
+ .Selection.Fields.Add .Selection.Range,wdFieldNumPages 
+end with
